@@ -1,5 +1,119 @@
+@font-face {
+    font-family: "Palace-Script-Regular";
+    src: url(Palace-Script-Regular.otf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
 body{
     background-color: black;
     font-family: Helvetica;
     color: white;
+    background: url(backgroundDP.jpg) no-repeat center center / cover fixed;
+}
+
+h2{
+    font-family: Palace-Script-Regular;
+    position:fixed;
+    font-size: 50px;
+    left: 9%;
+    bottom: 99px;
+}
+img.gif {
+    position: fixed;
+    top: -120px;
+    left: 49%;
+    transform: translateX(-50%);
+    z-index: 100;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+.album-scene{
+    position: relative;
+    bottom: -150px;
+    left: 120px;
+    width: 380px;
+    height: 320px;
+    overflow: visible;
+}
+
+.album-card{
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    cursor: pointer;
+    will-change: transform;
+    transition: transform 0.65s cubic-bezier(0.77, 0, 0.175, 1), box-shadow 0.4s ease, filter 0.4s ease;
+}
+
+.album-card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card-front{
+    width: 280px;
+    height: 280px;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    transform:scale(1);
+}
+
+.card-back{
+    width: 260px;
+    height: 260px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: scale(0,93);
+    filter: brightness(0.7)
+}
+
+.card-back:hover{
+    transform: scale(0.97);
+    filter: brightness(0.85);
+}
+
+.card-front.slide-out{
+    transform: translateX(420px) scale(0.88);
+    filter:brightness(0.5);
+    z-index: 3;
+    transition: transform 0.55s cubic-bezier(0.77, 0, 0.175, 1), filter 0.55 ease;
+}
+
+.card-back.come-forward{
+    z-index: 4;
+    transform: scale(1.04);
+    filter: brightness(1.05);
+    transition: transform 0.55 cubic-bezier(0.77, 0, 0.175, 1) 0.1s,
+    filter 0.55s ease 0.1s;
+}
+
+.card-front.new-back{
+    width:260px;
+    height:260px;
+    top: 8px;
+    left: auto;
+    right: -45px;
+    z-index: 1;
+    transform: scale(0.93);
+    filter:brightness(0.7);
+    transition: none;
+}
+
+.card-back.new-front{
+    width: 280px;
+    height: 280px;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    transform: scale(1);
+    filter: brightness(1);
 }
