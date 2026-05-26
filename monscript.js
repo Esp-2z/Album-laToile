@@ -2,7 +2,7 @@ const front = document.getElementById('cardFront');
 const back = document.getElementById('cardBack');
 let animating = false;
 
-console.log("dddd");
+
 
 
 back.addEventListener('click', () => {
